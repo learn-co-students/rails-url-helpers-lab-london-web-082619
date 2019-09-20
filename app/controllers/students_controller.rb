@@ -6,6 +6,19 @@ class StudentsController < ApplicationController
   end
 
   def show
+  
+  end
+
+  def login
+    # try login
+    # if it fails
+    # run register_path
+  end
+
+  def activate
+    @student = Student.find(params[:id])
+    @student.update(active: !@student.active)
+    redirect_to student_path(@student)
   end
 
   private
