@@ -1,5 +1,15 @@
 <div>
   <% @students.each do |student| %>
-    <div><%= student.first_name + " " + student.last_name %></div>
+    <table>
+      <tr>
+        <td><%= link_to student.to_s, student %></td>
+        <td><%= link_to "Edit", edit_student_path(student) %></td>
+        <td><%= link_to "Delete", student_path(student), method: :delete, date: {confirm: 'Are you sure?'} %></td>
+      </tr>
+    </table>
+
+
   <% end %>
+  <br>
+  <%= link_to "New Student", new_student_path %>
 </div>
