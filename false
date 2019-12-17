@@ -1,0 +1,2 @@
+      invoke  active_record
+      remove    db/migrate/20190920090213_add_active_to_students.rb
